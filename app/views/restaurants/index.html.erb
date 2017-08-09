@@ -1,0 +1,14 @@
+<h1>Restaurants</h1>
+<%= link_to "New Restaurant", new_restaurant_path, class: "btn btn-black" %>
+<table class="table-striped">
+  <th>
+    <td>Category</td>
+    <td>Address</td>
+  </th>
+<% @restaurants.each do |restaurant| %>
+  <tr>
+    <td><%= link_to restaurant.name, restaurant_path(restaurant) %></td>
+    <td><%= restaurant.category %></td>
+    <td><%= restaurant.address %></td>
+  </tr>
+<% end -%>
